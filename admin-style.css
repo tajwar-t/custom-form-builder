@@ -1,0 +1,110 @@
+.cfb-admin {
+  max-width: 1200px;
+}
+
+.cfb-create-form {
+  background: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.cfb-create-form h2 {
+  margin-top: 0;
+}
+
+.cfb-create-form input {
+  width: 300px;
+  margin-right: 10px;
+}
+
+#cfb-form-editor {
+  background: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#cfb-form-editor h2 {
+  margin-top: 0;
+}
+
+.cfb-add-field {
+  background: #f5f5f5;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+.cfb-add-field select,
+.cfb-add-field input {
+  margin-right: 10px;
+}
+
+.cfb-add-field input {
+  width: 250px;
+}
+
+#cfb-fields-list {
+  margin: 20px 0;
+  min-height: 100px;
+}
+
+.cfb-field-item {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.cfb-field-info {
+  flex: 1;
+}
+
+.cfb-field-info strong {
+  color: #0073aa;
+}
+
+.cfb-remove-field {
+  color: #a00;
+}
+
+.cfb-remove-field:hover {
+  color: #dc3232;
+  border-color: #dc3232;
+}
+
+.cfb-forms-list {
+  background: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.cfb-forms-list h2 {
+  margin-top: 0;
+}
+
+.cfb-forms-list table {
+  margin-top: 15px;
+}
+
+.cfb-forms-list code {
+  background: #f0f0f0;
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+#cfb-save-form-btn,
+#cfb-cancel-btn {
+  margin-top: 20px;
+  margin-right: 10px;
+}
