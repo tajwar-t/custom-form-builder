@@ -3,7 +3,7 @@
  * Plugin Name: Custom Form Builder
  * Description: Create and manage custom forms with an intuitive admin interface
  * Version: 1.0.0
- * Author: Your Name
+ * Author: Tajwar
  */
 
 if (!defined('ABSPATH')) exit;
