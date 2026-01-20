@@ -7,13 +7,38 @@ jQuery(document).ready(function ($) {
     const $submitBtn = $form.find(".cfb-submit");
     const $message = $form.find(".cfb-message");
 
+    // Create FormData object to handle files
+    const formDataObj = new FormData();
+    formDataObj.append("action", "cfb_submit_form");
+    formDataObj.append("nonce", cfbAjax.nonce);
+    formDataObj.append("form_id", formId);
+
     // Gather form data
     const formData = {};
-    $form.find("input, textarea, select").each(function () {
+    $form.find('input:not([type="file"]), textarea, select').each(function () {
       const $field = $(this);
       const name = $field.attr("name");
       if (name) {
-        formData[name] = $field.val();
+        if ($field.attr("type") === "checkbox") {
+          if ($field.is(":checked")) {
+            if (!formData[name]) formData[name] = [];
+            formData[name].push($field.val());
+          }
+        } else {
+          formData[name] = $field.val();
+        }
+      }
+    });
+
+    // Add regular form data
+    formDataObj.append("form_data", JSON.stringify(formData));
+
+    // Add file uploads
+    $form.find('input[type="file"]').each(function () {
+      const $fileInput = $(this);
+      const name = $fileInput.attr("name");
+      if (this.files && this.files[0]) {
+        formDataObj.append(name, this.files[0]);
       }
     });
 
@@ -24,12 +49,9 @@ jQuery(document).ready(function ($) {
     $.ajax({
       url: cfbAjax.ajaxurl,
       method: "POST",
-      data: {
-        action: "cfb_submit_form",
-        nonce: cfbAjax.nonce,
-        form_id: formId,
-        form_data: formData,
-      },
+      data: formDataObj,
+      processData: false,
+      contentType: false,
       success: function (response) {
         if (response.success) {
           $message.addClass("cfb-success").text(response.data.message);

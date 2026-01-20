@@ -24,6 +24,7 @@
 
 .cfb-field input[type="text"],
 .cfb-field input[type="email"],
+.cfb-field input[type="file"],
 .cfb-field textarea,
 .cfb-field select {
   width: 100%;
@@ -33,6 +34,19 @@
   font-size: 14px;
   box-sizing: border-box;
   transition: border-color 0.3s;
+}
+
+.cfb-field input[type="file"] {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.cfb-file-hint {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #666;
+  font-style: italic;
 }
 
 .cfb-field input:focus,
